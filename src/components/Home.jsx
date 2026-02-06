@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 const Home = () => {
   return (
     <div>
-      <h1>Home updated</h1>
+      <h1>Home updated again updated</h1>
     </div>
   );
 };
