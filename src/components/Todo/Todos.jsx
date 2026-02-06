@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import AddTodo from "./AddTodo";
+import TodoItem from "./TodoItem";
 
 const Todos = () => {
-  const navigate = useNavigate();
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     const getTodos = async () => {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos"
+        "https://jsonplaceholder.typicode.com/todos",
       );
       const result = await response.json();
 
@@ -22,14 +22,10 @@ const Todos = () => {
     <div>
       <h1>Todos</h1>
 
+      <AddTodo />
+
       {todos.map((todo) => (
-        <h1
-          onClick={() => {
-            navigate(`/todos/${todo.id}`);
-          }}
-        >
-          {todo.title}
-        </h1>
+        <TodoItem todo={todo} />
       ))}
     </div>
   );
