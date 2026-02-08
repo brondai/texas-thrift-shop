@@ -9,6 +9,11 @@ const Todos = () => {
     const getTodos = async () => {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/todos",
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        },
       );
       const result = await response.json();
 

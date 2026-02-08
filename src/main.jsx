@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import App from "./App";
 import Todos from "./components/Todo/Todos";
 import TodoDetails from "./components/Todo/TodoDetails";
+import LoginForm from "./components/LoginForm";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <LoginForm />,
       },
       {
         path: "/about",
